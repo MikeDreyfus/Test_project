@@ -45,7 +45,7 @@ ul li {
 }
 
 .small {
-    font-family: Inter;
+    font-size: 100;
 }
 
 .numberCircle {
@@ -564,6 +564,7 @@ select {
 .description {
     display: none;
     transition: .25s ease;
+    padding-right: 50px;
 }
 
 .button-top {
