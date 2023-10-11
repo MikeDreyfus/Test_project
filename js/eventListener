@@ -1,0 +1,99 @@
+BtnElements = document.querySelectorAll('.additional-Info');
+AddBtn = document.querySelectorAll(".AddButton")
+DescElements = document.querySelectorAll('.hidenDescription--close');
+ServPr = document.querySelectorAll('.service-preview')
+DescrCard = document.querySelectorAll('.description-card')
+Slider = document.getElementById('service-slider')
+    
+ function ShowHidenDescription(){
+        number = jQuery.inArray(this, BtnElements)
+        console.log(number, DescElements[number])
+
+
+        
+        for (var i = 0; i < BtnElements.length; i++){
+            if (BtnElements[i].classList.contains('additional-Info--active') && i != number) {
+                BtnElements[i].classList.remove('additional-Info--active')
+                BtnElements[i].classList.add('additional-Info')
+                DescElements[i].classList.remove('hidenDescription--open')
+                DescElements[i].classList.add('hidenDescription--close')
+                AddBtn[i].classList.remove('AddButton--active')
+                AddBtn[i].classList.add('AddButton')
+                ServPr[i].style.color = '#0A9A88'
+                DescrCard[i].style.background = ''
+                DescrCard[i].style.color = '#444D5C'
+                DescrCard[i].classList.toggle('height')
+            }
+        }
+
+
+        if (BtnElements[number].classList.contains('additional-Info')) {
+            BtnElements[number].classList.remove('additional-Info')
+            BtnElements[number].classList.add('additional-Info--active')
+            DescElements[number].classList.remove('hidenDescription--close')
+            DescElements[number].classList.add('hidenDescription--open')
+            AddBtn[number].classList.remove('AddButton')
+            AddBtn[number].classList.add('AddButton--active')
+            ServPr[number].style.color = '#EBE1E2'
+            DescrCard[number].style.background = '#0A9A88'
+            DescrCard[number].style.color = '#EBE1E2'
+            DescrCard[number].classList.toggle('height')
+
+
+        }
+        else {
+            BtnElements[number].classList.remove('additional-Info--active')
+            BtnElements[number].classList.add('additional-Info')
+            DescElements[number].classList.remove('hidenDescription--open')
+            DescElements[number].classList.add('hidenDescription--close')
+            AddBtn[number].classList.remove('AddButton--active')
+            AddBtn[number].classList.add('AddButton')
+            ServPr[number].style.color = '#0A9A88'
+            DescrCard[number].style.background = ''
+            DescrCard[number].style.color = '#444D5C'
+            DescrCard[number].classList.toggle('height')
+        }
+
+
+    }
+
+for (var i = 0; i < BtnElements.length; i++) {
+    BtnElements[i].addEventListener("click", ShowHidenDescription);
+}
+
+
+
+
+
+var draggableElement = document.querySelector('.service-selector');
+var startX, offsetX, X;
+
+
+function dragStart(event) {
+  event.preventDefault();
+  X = parseInt(draggableElement.style.translate, 10);
+  startX = event.clientX;
+  offsetX = parseInt(draggableElement.style.left) || 0;
+  document.addEventListener('mousemove', drag);
+  document.addEventListener('mouseup', dragEnd);
+  
+  
+}
+
+function drag(event) {
+  var distanceX = event.clientX - startX;
+  if ((offsetX + distanceX) + X >= -500 && (offsetX + distanceX) + X <= 100) {
+    draggableElement.style.translate = ((offsetX + distanceX) + X) + "px" ;
+    console.log ((offsetX + distanceX), X, (offsetX + distanceX) + X )
+  }
+}
+
+function dragEnd(event) {
+  document.removeEventListener('mousemove', drag);
+  document.removeEventListener('mouseup', dragEnd);
+}
+
+draggableElement.addEventListener('mousedown', dragStart);
+
+
+
