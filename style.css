@@ -31,8 +31,8 @@ ul li {
 
 
 .bigger {
-    font-size: 280%;
-    font-family: Actay Wide;
+    font-size: 260%;
+    
     font-weight: bold;
     margin-bottom: 0.5em;
     margin-top: 0.4em;
@@ -40,10 +40,8 @@ ul li {
 }
 
 .bold {
-    font-size: 150%;
-    font-weight: 900;
-    font-family: Actay Wide;
-    
+    font-size: 120%;
+    font-weight: 700;
 }
 
 .small {
@@ -283,6 +281,7 @@ section {
 
 .froze {
     background-image: url(img/Услуга\ 2.png);
+    background-position: right;
 }
 
 .delivery {
@@ -440,6 +439,9 @@ section {
     border-right: none;
 }
 
+.work__block--left p {
+    margin-left: 1.7em;
+}
 
 .work__block--right {
     border-bottom-right-radius: 30px;
@@ -466,7 +468,7 @@ section {
 }
 
 .slide img {
-    width: 55%;
+    width: 50%;
     height: auto;
     border-radius: 30px;
 
@@ -474,7 +476,7 @@ section {
 
 .slide__text {
     width: 30%;
-    margin-right: 60px;
+    margin-right: 8em;
 }
 
 .slide__text button {
@@ -489,10 +491,38 @@ section {
     border-radius: 40px;
 }
 
+.slick-dots li button:before {
+    font-family: 'slick';
+     font-size: 2px;
+     line-height: 5px;
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 5px;
+     height: 5px;
+     background-color: #000000;
+     border-radius: 50%;
+     text-align: center;
+     opacity: .25;
+     color: black;
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+     margin-top: 10px;
+     
+   }
 
 
 
 
+select {
+    background-image: url(icon/btn\ стрелка\ вниз-вверх\ 1.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-align: left;
+    padding-left: 20px;
+}
 
 
 
@@ -539,6 +569,9 @@ section {
 .button-top {
     background-image: url('icon/btn\ стрелка\ вниз-вверх\ 2.svg');
     background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 30px;
+    background-size: 100% 100%;
     width: 3.8em;
     height: 3.8em;
     cursor: pointer;
@@ -655,6 +688,8 @@ section {
 
 ::placeholder { 
     color: #0A9A88;
+    float: left;
+    margin-left: 20px;
  }
 
  input[type="checkbox"]:checked {
